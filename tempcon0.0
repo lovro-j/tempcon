@@ -2,3 +2,21 @@ temp_c = 34
 temp_f = temp_c*(9.0/5.0) + 32.0
 
 print(temp_f)
+
+"""things to improve/include:
+    1. Include more conversions; from Farenheit to Celsius and also include coversions to Kelvin
+    2. Also print out the units
+    3. Potentially create user interface"""
+
+temp_f = 95
+temp_c = (temp_f - 32.0) * (5.0/9.0)
+print(temp_c)
+
+temp_k = temp_c + 273.15
+temp_k = (temp_f - 32.0) * (5.0/9.0) + 273.15
+
+
+degree_sign = u'\N{DEGREE SIGN}'
+print(str(temp_c) + degree_sign + "C")
+print(str(temp_f) + degree_sign + "F")
+print(str(temp_k) + "K")
