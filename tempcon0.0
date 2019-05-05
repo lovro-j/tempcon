@@ -1,60 +1,67 @@
-"""
-So first ask what is the unit we have and second that is the unit we want to convert to.
-Can use if statement, if celsius, elif farenheit, else kelvin. This will be done twice.
+#This is the prompt for the user to input something into the temperature converter
+input1 = input("What unit do you want to convert? Your options are 'C' for celsius, 'F' for Farenheit and 'K' for Kelvin ")
+x = input("What is the value of the unit you want to convert? Type a number here ")
+input2 = input("What is the unit you want to convert to? ")
 
-1. Use a function that asks for user input
-2. Use the same or another function for the unit to convert to.
-3. If statments to decide what formula to use.
-"""
+#this is all the necessary preliminrary code to minimize errors and correctly print correct units
+input1 = input1.upper()
+x = float(x)
+input2 = input2.upper()
+degree_sign = u'\N{DEGREE SIGN}'
+            
+#here is the nested if-else statements decision tree required to choose the right coversion formula
+if input1 == "C":
+    if input2 == "F":
+        y = x*(9.0/5.0) + 32.0
+        print(str(y) + degree_sign + "F")
 
-
-
-def tempcon(x, unit1, unit2):
+    elif input2 == "K":
+        y = x + 273.15
+        print(str(y) + "K")
     
-    unit1 = unit1.upper()
-    unit2 = unit2.upper()   
+    elif input2 == "C":
+        y = x
+        print(str(y) + degree_sign + "C")
     
-    if unit1 == "C":
-        if unit2 == "F":
-            y = x*(9.0/5.0) + 32.0
-            return y
-        elif unit2 == "K":
-            y = x + 273.15
-            return y
-        elif unit2 == "C":
-            y = x
-            return y
-        else:
-            return ("Input Error")
+    else:
+        print("Input Error")
 
-    elif unit1 == "F":
-        if unit2 == "F":
-            x = y
-            return y
-        elif unit2 == "C":
-            y = (x - 32.0) * (5.0/9.0)
-            return y
-        elif unit2 == "K":
-            y = (x - 32.0) * (5.0/9.0) + 273.15
-            return y
-        else:
-            return ("Input Error")
+elif input1 == "F":
 
-    elif unit1 == "K":
-        if unit2 == "K":
-            y = x
-            return y
-        elif unit2 == "C":
-            y = x - 273.15
-            return y
-        elif unit2 == "F":
-            y = (x - 273.15) *(9.0/5.0) + 32.0
-            return y
-        else:
-            return ("Input Error")
+    if input2 == "F":
+        x = y
+        print(str(y) + degree_sign + "F")
+    
+    elif input2 == "C":
+        y = (x - 32.0) * (5.0/9.0)
+        print(str(y) + degree_sign + "C")
+
+    elif input2 == "K":
+        y = (x - 32.0) * (5.0/9.0) + 273.15
+        print(str(y) + "K")
+        
+    else:
+        print("Input Error")
+
+elif input1 == "K":
+    if input2 == "K":
+        y = x
+        print(str(y) + "K")
+
+    elif input2 == "C":
+        y = x - 273.15
+        print(str(y) + degree_sign + "C")
+
+    elif input2 == "F":
+        y = (x - 273.15) *(9.0/5.0) + 32.0
+        print(str(y) + degree_sign + "F")
 
     else:
-        return ("Input Error")
+        print("Input Error")
+
+else:
+    print("Input Error")
         
         
             
+
