@@ -3,13 +3,13 @@ input1 = input("What unit do you want to convert? Your options are 'C' for celsi
 x = input("What is the value of the unit you want to convert? Type a number here ")
 input2 = input("What is the unit you want to convert to? ")
 
-#this is all the necessary preliminrary code to minimize errors and correctly print correct units
+#this section consista of all the necessary preliminrary code to minimize errors and correctly print correct units
 input1 = input1.upper()
 x = float(x)
 input2 = input2.upper()
 degree_sign = u'\N{DEGREE SIGN}'
             
-#here is the nested if-else statements decision tree required to choose the right coversion formula
+#here are the nested if-else statements decision tree required to choose the right coversion formula
 if input1 == "C":
     if input2 == "F":
         y = x*(9.0/5.0) + 32.0
